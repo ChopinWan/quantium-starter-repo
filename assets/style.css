@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  --bg-main: #f2e8dc;
+  --bg-card: #fff9f0;
+  --ink: #1f1f1f;
+  --accent: #c44536;
+  --accent-dark: #8f2b1f;
+  --line: #d5c2a8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 10% 15%, #f7cf9f 0%, transparent 28%),
+    radial-gradient(circle at 92% 85%, #f2b6ad 0%, transparent 32%),
+    linear-gradient(135deg, #f2e8dc 0%, #f6efe5 100%);
+  font-family: "Bricolage Grotesque", "Segoe UI", sans-serif;
+}
+
+.app-shell {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 28px 20px 36px;
+}
+
+.hero-card,
+.control-card,
+.chart-card {
+  border: 2px solid var(--line);
+  border-radius: 20px;
+  background: var(--bg-card);
+  box-shadow: 0 14px 28px rgba(63, 34, 18, 0.12);
+}
+
+.hero-card {
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -60px -70px auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #e29a70 0%, #cf5f43 100%);
+  opacity: 0.25;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  max-width: 760px;
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+.control-card {
+  margin-top: 18px;
+  padding: 18px 22px;
+}
+
+.control-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #5c4d40;
+  font-family: "Space Mono", monospace;
+}
+
+.region-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.region-radio-group input[type="radio"] {
+  margin-right: 6px;
+  accent-color: var(--accent);
+}
+
+.region-radio-label {
+  border: 1px solid #cfb9a0;
+  border-radius: 999px;
+  background: #fff5e8;
+  padding: 8px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.region-radio-label:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  box-shadow: 0 6px 12px rgba(161, 63, 49, 0.15);
+}
+
+.chart-card {
+  margin-top: 18px;
+  padding: 10px;
+}
+
+@media (max-width: 700px) {
+  .app-shell {
+    padding: 18px 12px 24px;
+  }
+
+  .hero-card,
+  .control-card,
+  .chart-card {
+    border-radius: 14px;
+  }
+
+  .region-radio-label {
+    width: 100%;
+  }
+}
